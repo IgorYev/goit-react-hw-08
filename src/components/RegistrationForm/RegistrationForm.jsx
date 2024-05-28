@@ -35,19 +35,19 @@ export default function RegistrationForm() {
     dispatch(register(values))
       .unwrap()
       .then(() => {
-        toast.success("Successful registration!!!", {
+        toast.success("Successful registration!", {
           style: {
-            border: "10px solid yellow",
+            border: "10px solid blue",
             padding: "16px",
-            color: "green",
+            color: "blue",
             background: "white",
           },
         });
       })
       .catch(() => {
-        toast.error("Oops, something went wrong!!! Try again", {
+        toast.error("Oops, something went wrong! Try again", {
           style: {
-            border: "10px solid yellow",
+            border: "10px solid blue",
             padding: "20px",
             color: "red",
             fontSize: "16px",

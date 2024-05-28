@@ -16,9 +16,8 @@ export default function ContactForm() {
     dispatch(addContact(values))
       .unwrap()
       .then(() =>
-        toast.success("Your contact has been saved !!!", {
+        toast.success("Your contact has been saved !", {
           style: {
-            border: "10px solid yellow",
             padding: "16px",
             color: "green",
             background: "white",
@@ -26,9 +25,8 @@ export default function ContactForm() {
         })
       )
       .catch(() => {
-        toast.error("Oops, something went wrong!!! Try again", {
+        toast.error("Oops, something went wrong! Try again", {
           style: {
-            border: "10px solid yellow",
             padding: "20px",
             color: "red",
             fontSize: "16px",

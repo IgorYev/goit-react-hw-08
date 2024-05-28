@@ -8,7 +8,7 @@ const getNavLinkClass = ({ isActive }) => {
 
 export default function AuthNav() {
   return (
-    <nav className={css.wrapperUser}>
+    <nav className={css.navUser}>
       <NavLink to="/register" className={getNavLinkClass}>
         Registration
       </NavLink>

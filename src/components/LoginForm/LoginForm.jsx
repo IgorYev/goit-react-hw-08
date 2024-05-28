@@ -3,7 +3,6 @@ import { useId } from "react";
 import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
 import toast, { Toaster } from "react-hot-toast";
-import css from "./LoginForm.module.css";
 
 export default function LoginForm() {
   const userNameId = useId();
@@ -15,9 +14,8 @@ export default function LoginForm() {
     dispatch(logIn(values))
       .unwrap()
       .then(() =>
-        toast.success("Successful autorization!!!", {
+        toast.success("Successful autorization!", {
           style: {
-            border: "10px solid yellow",
             padding: "16px",
             color: "green",
             background: "white",
@@ -25,9 +23,8 @@ export default function LoginForm() {
         })
       )
       .catch(() => {
-        toast.error("Oops, something went wrong!!! Try again", {
+        toast.error("Oops, something went wrong! Try again", {
           style: {
-            border: "10px solid yellow",
             padding: "20px",
             color: "red",
             fontSize: "16px",
@@ -48,28 +45,16 @@ export default function LoginForm() {
         }}
         onSubmit={handleSubmit}
       >
-        <Form className={css.form} autoComplete="off">
-          <label className={css.label} htmlFor={userNameId}>
+        <Form autoComplete="off">
+          <label htmlFor={userNameId}>
             Email
-            <Field
-              className={css.field}
-              id={userNameId}
-              type="email"
-              name="email"
-            />
+            <Field id={userNameId} type="email" name="email" />
           </label>
-          <label className={css.label} htmlFor={userEmailId}>
+          <label htmlFor={userEmailId}>
             Password
-            <Field
-              className={css.field}
-              id={userEmailId}
-              type="password"
-              name="password"
-            />
+            <Field id={userEmailId} type="password" name="password" />
           </label>
-          <button className={css.button} type="submit">
-            Log In
-          </button>
+          <button type="submit">LogIn</button>
         </Form>
       </Formik>
       <Toaster position="top-center" />
