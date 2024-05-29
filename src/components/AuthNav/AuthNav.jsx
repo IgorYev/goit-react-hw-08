@@ -13,7 +13,7 @@ export default function AuthNav() {
         Registration
       </NavLink>
       <NavLink to="/login" className={getNavLinkClass}>
-        LogIn
+        Login
       </NavLink>
     </nav>
   );
